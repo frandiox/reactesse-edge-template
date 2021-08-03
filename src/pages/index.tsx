@@ -21,10 +21,10 @@ export default function Home({ message }: any) {
       <p>
         <a
           rel="noreferrer"
-          href="https://github.com/frandiox/reactesse-ssr-template"
+          href="https://github.com/frandiox/reactesse-edge-template"
           target="_blank"
         >
-          Reactesse SSR
+          Reactesse Edge
         </a>
       </p>
       <p>

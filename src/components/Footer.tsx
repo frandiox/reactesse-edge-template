@@ -62,7 +62,7 @@ export default function Footer() {
       <a
         className="icon-btn"
         rel="noreferrer"
-        href="https://github.com/frandiox/reactesse-ssr-template"
+        href="https://github.com/frandiox/reactesse-edge-template"
         target="_blank"
         title="Template"
       >

@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "ESNext",
-    "target": "es2016",
-    "lib": ["DOM", "ESNext"],
+    "target": "es2019",
+    "lib": ["DOM", "ESNext", "WebWorker"],
     "strict": true,
     "jsx": "react",
     "esModuleInterop": true,
@@ -20,7 +20,7 @@
       "vite-plugin-pages/client",
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*", "functions/*"]
     }
   },
   "exclude": ["dist", "node_modules"]

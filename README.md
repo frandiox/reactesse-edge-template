@@ -1,14 +1,16 @@
-# Reactesse SSR
+# Reactesse Edge
 
-> React + Vite + SSR template based on [@antfu](https://github.com/antfu)'s [Vitesse](https://github.com/antfu/vitesse) with [`vite-ssr`](https://github.com/frandiox/vite-ssr).
+> React + Vite + Edge Side Rendering template based on [@antfu](https://github.com/antfu)'s [Vitesse](https://github.com/antfu/vitesse) with [Vitedge](https://github.com/frandiox/vitedge).
 
 <p align='center'>
-<a href="https://reactesse-ssr.vercel.app/">Live Demo</a>
+<a href="https://reactesse.zable.workers.dev/">Live Demo</a>
 </p>
 
 ## Features
 
 - ⚡️ [React](https://github.com/facebook/react), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild)
+
+- ⚔️ Edge-side rendering in Cloudflare Workers via [Vitedge](https://github.com/frandiox/vitedge), with edge cache and HTTP/2 server push
 
 - 🗂 [File based routing](./src/pages)
 
@@ -20,11 +22,9 @@
 
 - 🗒 [Markdown Support](https://github.com/brillout/vite-plugin-mdx)
 
-- 🖨 Server-side rendering (SSR) in Node.js via [vite-ssr](https://github.com/frandiox/vite-ssr)
-
 - 🦾 TypeScript, of course
 
-- ☁️ Deploy on Vercel, minimal [config](./serverless/vercel.json)
+- ☁️ Deploy on Cloudflare Workers, minimal [setup](./wrangler.toml)
 
 <br>
 
@@ -42,32 +42,33 @@
 - [`vite-plugin-mdx`](https://github.com/brillout/vite-plugin-mdx) - Markdown as components / components in Markdown
 - [`remark-prism`](https://github.com/sergioramos/remark-prism) - [Prism](https://prismjs.com/) for syntax highlighting
 - [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) - customizable Prism.js theme using CSS variables
-- [react-i18next](https://react.i18next.com/) - Internationalization
+- [`react-i18next`](https://react.i18next.com/) - Internationalization
 - [`react-helmet-async`](https://github.com/staylor/react-helmet-async) - manipulate document head reactively
 
 ### Dev tools
 
+- [Vitedge](https://github.com/frandiox/vitedge) - Edge-side rendering
+- [Miniflare](https://github.com/mrbbot/miniflare) - Preview your app in a worker environment locally
+- [Wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) - Deploy to Cloudflare Workers
 - [TypeScript](https://www.typescriptlang.org/)
-- [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
-- [`vite-ssr`](https://github.com/frandiox/vite-ssr) - Server-side rendering
-- [Vercel](https://vercel.com/) - deploy
 - [VS Code Extensions](./.vscode/extensions.json)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
+  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ## Try it now!
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/frandiox/reactesse-ssr-template/generate).
+[Create a repo from this template on GitHub](https://github.com/frandiox/reactesse-edge-template/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit frandiox/reactesse-ssr-template my-reactesse-app
+npx degit frandiox/reactesse-edge-template my-reactesse-app
 cd my-reactesse-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
+npm i
 ```
 
 ## Checklist
@@ -89,8 +90,8 @@ And, enjoy :)
 Just run and visit http://localhost:3333
 
 ```bash
-pnpm dev # SSR development
-pnpm dev:spa # SPA without SSR
+npm run dev # SSR development
+npm run dev:spa # SPA without SSR
 ```
 
 ### Build
@@ -98,17 +99,18 @@ pnpm dev:spa # SPA without SSR
 To build the App, run
 
 ```bash
-pnpm build
+npm run build
 ```
 
-And you will see the generated files in `dist`, and some of these files will be moved to `serverless` for deployment.
+And you will see the generated files in `dist`.
 
-### Deploy on Vercel
+### Deploy on Cloudflare Workers
 
-Go to [Vercel](https://vercel.com) and install its CLI. Then:
+1. Create your [Cloudflare](https://www.cloudflare.com/) account.
+2. Install [Wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) CLI.
+3. Modify the `account_id` in [wrangler.toml](./worker-site/wrangler.toml). Then:
 
 ```bash
-pnpm preview # Simulate Vercel environment locally
-pnpm deploy
-pnpm deploy:prod
+npm run preview # Simulate Worker environment locally
+npm run deploy
 ```

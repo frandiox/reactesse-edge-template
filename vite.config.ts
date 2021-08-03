@@ -2,13 +2,11 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
-import viteSSR from 'vite-ssr/plugin'
+import vitedge from 'vitedge/plugin.js'
 import mdx from 'vite-plugin-mdx'
 // @ts-ignore
 import remarkPrism from 'remark-prism'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-// @ts-ignore
-import getPageProps from './serverless/api/get-page-props'
 
 export default defineConfig({
   resolve: {
@@ -18,31 +16,28 @@ export default defineConfig({
   },
   plugins: [
     reactRefresh(),
-    viteSSR(),
-    mdx({
+    vitedge(),
+    // @ts-ignore
+    mdx.default({
       remarkPlugins: [remarkPrism],
     }),
-    {
-      name: 'API-mock',
-      configureServer({ middlewares }) {
-        middlewares.use('/api/get-page-props', getPageProps)
-      },
-    },
 
     // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
+    // @ts-ignore
+    Pages.default({
       react: true,
       extensions: ['jsx', 'tsx', 'mdx'],
     }),
 
     // https://github.com/antfu/vite-plugin-windicss
-    WindiCSS({
+    // @ts-ignore
+    WindiCSS.default({
       safelist: 'prose prose-sm m-auto',
     }),
   ],
 
   optimizeDeps: {
-    include: ['@mdx-js/react'],
+    include: ['@mdx-js/react', '@react-icons/all-files'],
     exclude: [],
   },
 })

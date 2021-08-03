@@ -5,7 +5,7 @@ import { renderRoutes } from 'react-router-config'
 import { Context } from 'vite-ssr/react'
 
 export default function App({ router }: Context) {
-  const title = 'Reactesse SSR'
+  const title = 'Reactesse Edge'
   const description = 'Opinionated SSR Vite Starter Template for React'
 
   return (
