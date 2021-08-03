@@ -8,7 +8,7 @@
 
 ## Features
 
-- ⚡️ [React](https://github.com/facebook/react), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/), [ESBuild](https://github.com/evanw/esbuild)
+- ⚡️ [React](https://github.com/facebook/react), [Vite 2](https://github.com/vitejs/vite), [ESBuild](https://github.com/evanw/esbuild)
 
 - ⚔️ Edge-side rendering in Cloudflare Workers via [Vitedge](https://github.com/frandiox/vitedge), with edge cache and HTTP/2 server push
 
