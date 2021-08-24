@@ -33,7 +33,7 @@ export default function Footer() {
       <a
         className="icon-btn"
         rel="noreferrer"
-        href="https://github.com/frandiox/vite-ssr"
+        href="https://github.com/frandiox/vitedge"
         target="_blank"
         title="Library"
       >

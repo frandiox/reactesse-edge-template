@@ -18,7 +18,7 @@ routes.forEach((route) => {
   route.path = route.path.includes('*') ? '*' : route.path
 })
 
-// https://github.com/frandiox/vite-ssr
+// https://github.com/frandiox/vitedge
 export default vitedge(
   App,
   {
