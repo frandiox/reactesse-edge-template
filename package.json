@@ -28,7 +28,7 @@
     "react-router": "^5.2.0",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.2.0",
-    "vitedge": "^0.15.1"
+    "vitedge": "0.16.x"
   },
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
