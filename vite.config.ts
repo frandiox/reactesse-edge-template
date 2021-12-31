@@ -31,7 +31,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-windicss
     // @ts-ignore
-    WindiCSS.default({
+    WindiCSS({
       safelist: 'prose prose-sm m-auto',
     }),
   ],
