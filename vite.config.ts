@@ -6,7 +6,7 @@ import vitedge from 'vitedge/plugin.js'
 import mdx from 'vite-plugin-mdx'
 // @ts-ignore
 import remarkPrism from 'remark-prism'
-import reactRefresh from '@vitejs/plugin-react-refresh'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   resolve: {
@@ -15,7 +15,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    reactRefresh(),
+    react(),
     vitedge(),
     // @ts-ignore
     mdx.default({
@@ -37,7 +37,11 @@ export default defineConfig({
   ],
 
   optimizeDeps: {
-    include: ['@mdx-js/react', '@react-icons/all-files'],
+    include: [
+      '@mdx-js/react',
+      '@react-icons/all-files',
+      '@react-icons/all-files/fa/FaRegHandSpock',
+    ],
     exclude: [],
   },
 })
